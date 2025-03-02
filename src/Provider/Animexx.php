@@ -24,7 +24,7 @@ class Animexx extends AbstractProvider
      *
      * @var string
      */
-    public $domain = 'https://ssl.animexx.de';
+    public $domain = 'https://account.animexx.de';
 
     /**
      * Api Domain
@@ -42,7 +42,7 @@ class Animexx extends AbstractProvider
      */
     public function getBaseAuthorizationUrl()
     {
-        return $this->domain . '/oauth2/authorize/';
+        return $this->domain . '/realms/animexx/protocol/openid-connect/auth';
     }
 
     /**
@@ -55,7 +55,7 @@ class Animexx extends AbstractProvider
      */
     public function getBaseAccessTokenUrl(array $params)
     {
-        return $this->domain . '/oauth2/token/';
+        return $this->domain . '/realms/animexx/protocol/openid-connect/token';
     }
 
     /**
